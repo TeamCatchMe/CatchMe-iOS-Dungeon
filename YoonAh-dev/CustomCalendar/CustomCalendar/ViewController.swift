@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     let dummyFormatter = DateFormatter()
     var dummyDate: [String] = ["2021-09-13", "2022-01-01", "2021-07-17", "2021-06-15", "2021-06-16", "2021-06-17", "2021-06-18", "2021-06-25"]
     var monthDate: [String] = []
+    var dayAndYear = ""
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
@@ -52,12 +53,14 @@ class ViewController: UIViewController {
     
     func makeMonthDate() {
         monthDate.removeAll()
+        dayAndYear = ""
         
         let firstDayOfMonth = Calendar.current.date(from: components)
         dateFormatter.dateFormat = "YYYY"
         let year = dateFormatter.string(from: firstDayOfMonth!)
         dateFormatter.dateFormat = "MM"
         let month = dateFormatter.string(from: firstDayOfMonth!)
+        dayAndYear = year + "." + month
         
         dummyFormatter.dateFormat = "YYYY"
         for date in dummyDate {
@@ -156,29 +159,25 @@ extension ViewController: UICollectionViewDataSource {
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier:dayCell.identifier, for: indexPath) as! dayCell
             
+            cell.dataLabel.text = days[indexPath.row]
+            cell.dataLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+            cell.dataLabel.textColor = .white
+            
             if !monthDate.isEmpty {
                 if monthDate[0] == days[indexPath.row] {
                     cell.characterImage.isHidden = false
                     cell.countLabel.text = "3"
                     cell.countLabel.textColor = .systemGray
                     cell.countLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
-                    
+                    cell.dataLabel.isHidden = true
                     monthDate.removeFirst()
                 } else {
-                    cell.dataLabel.text = days[indexPath.row]
-                    
-                    cell.dataLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-                    cell.dataLabel.textColor = .white
-                    
+                    cell.dataLabel.isHidden = false
                     cell.characterImage.isHidden = true
                     cell.countLabel.text = ""
                 }
             } else {
-                cell.dataLabel.text = days[indexPath.row]
-                
-                cell.dataLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-                cell.dataLabel.textColor = .white
-                
+                cell.dataLabel.isHidden = false
                 cell.characterImage.isHidden = true
                 cell.countLabel.text = ""
             }
@@ -221,3 +220,27 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let currentCell = collectionView.cellForItem(at: indexPath) as? dayCell else { return
+        }
+        
+        if currentCell.characterImage.isHidden == false {
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
+            
+            if let text = currentCell.dataLabel.text {
+                var newText = ""
+                if text.count == 1 {
+                    newText = ".0\(text)"
+                } else {
+                    newText = ".\(text)"
+                }
+                vc.setLabel(date: dayAndYear + newText)
+            }
+            
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            present(vc, animated: true, completion: nil)
+        }
+    }
+}

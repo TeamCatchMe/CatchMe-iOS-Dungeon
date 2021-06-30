@@ -14,6 +14,7 @@
 		EDF1AD45268CE4C400606006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF1AD44268CE4C400606006 /* Assets.xcassets */; };
 		EDF1AD48268CE4C400606006 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF1AD46268CE4C400606006 /* LaunchScreen.storyboard */; };
 		EDF1AD50268CE67D00606006 /* dayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1AD4F268CE67D00606006 /* dayCell.swift */; };
+		EDF1AD52268D027F00606006 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1AD51268D027F00606006 /* PopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		EDF1AD47268CE4C400606006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDF1AD49268CE4C400606006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDF1AD4F268CE67D00606006 /* dayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayCell.swift; sourceTree = "<group>"; };
+		EDF1AD51268D027F00606006 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				EDF1AD46268CE4C400606006 /* LaunchScreen.storyboard */,
 				EDF1AD49268CE4C400606006 /* Info.plist */,
 				EDF1AD4F268CE67D00606006 /* dayCell.swift */,
+				EDF1AD51268D027F00606006 /* PopUpViewController.swift */,
 			);
 			path = CustomCalendar;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF1AD52268D027F00606006 /* PopUpViewController.swift in Sources */,
 				EDF1AD40268CE4C100606006 /* ViewController.swift in Sources */,
 				EDF1AD3C268CE4C100606006 /* AppDelegate.swift in Sources */,
 				EDF1AD50268CE67D00606006 /* dayCell.swift in Sources */,
