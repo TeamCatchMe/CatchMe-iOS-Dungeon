@@ -21,26 +21,54 @@ class ViewController: UIViewController {
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var weekdayCollectionView: UICollectionView!
     @IBOutlet weak var dateCollectionView: UICollectionView!
-    // MARK: - Life Cycles
     
+    // MARK: - Dummy Data
+    let dummyFormatter = DateFormatter()
+    var dummyDate: [String] = ["2021-09-13", "2022-01-01", "2021-07-17", "2021-06-15", "2021-06-16", "2021-06-17", "2021-06-18", "2021-06-25"]
+    var monthDate: [String] = []
+    
+    // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        initCalendar()
+        makeMonthDate()
         initView()
     }
     
     // MARK: - IBActions
-    /// 이전달 버튼 클릭
     @IBAction func previousButtonClicked(_ sender: Any) {
         components.month = components.month! - 1
         self.calculation()
+        self.makeMonthDate()
         self.dateCollectionView.reloadData()
     }
     
-    /// 다음달 버튼 클릭
     @IBAction func nextButtonClicked(_ sender: Any) {
         components.month = components.month! + 1
         self.calculation()
+        self.makeMonthDate()
         self.dateCollectionView.reloadData()
+    }
+    
+    func makeMonthDate() {
+        monthDate.removeAll()
+        
+        let firstDayOfMonth = Calendar.current.date(from: components)
+        dateFormatter.dateFormat = "YYYY"
+        let year = dateFormatter.string(from: firstDayOfMonth!)
+        dateFormatter.dateFormat = "MM"
+        let month = dateFormatter.string(from: firstDayOfMonth!)
+        
+        dummyFormatter.dateFormat = "YYYY"
+        for date in dummyDate {
+            let string = date.split(separator: "-")
+            
+            if string[0] == year && string[1] == month {
+                monthDate.append(String(string[2]))
+            }
+        }
+        
+        print(monthDate)
     }
 }
 
@@ -50,7 +78,6 @@ extension ViewController {
     private func initView() {
         initUI()
         initCollectionView()
-        initCalendar()
         self.calculation()
     }
     
@@ -59,6 +86,8 @@ extension ViewController {
         
         monthLabel.textColor = .white
         monthLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        
+        dateFormatter.dateFormat = "M월 YYYY"
     }
     
     private func initCollectionView() {
@@ -74,7 +103,6 @@ extension ViewController {
     }
     
     private func initCalendar() {
-        dateFormatter.dateFormat = "M월 YYYY"
         components.year = Calendar.current.component(.year, from: Date())
         components.month = Calendar.current.component(.month, from: Date())
         components.day = 1
@@ -104,7 +132,6 @@ extension ViewController {
 }
 
 extension ViewController: UICollectionViewDataSource {
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section:Int) -> Int {
         if collectionView == weekdayCollectionView {
             return 7
@@ -141,21 +168,33 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let boundSize = UIScreen.main.bounds.size.width
-        let cellSize = boundSize / 9
+        let weekBoundSize = UIScreen.main.bounds.size.width - 32 - 42
+        let dayBoundSize = UIScreen.main.bounds.size.width - 32 - 24
+        var cellSize = 0
         
         switch collectionView {
         case weekdayCollectionView:
+            cellSize = Int(weekBoundSize / 7)
             return CGSize(width: cellSize,
-                            height: weekdayCollectionView.frame.height)
+                            height: 43)
         default:
+            cellSize = Int(dayBoundSize / 7)
             return CGSize(width: cellSize,
-                            height: cellSize)
+                            height: 51)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        switch collectionView {
+        case weekdayCollectionView:
+            return 7
+        default:
+            return 4
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
 
