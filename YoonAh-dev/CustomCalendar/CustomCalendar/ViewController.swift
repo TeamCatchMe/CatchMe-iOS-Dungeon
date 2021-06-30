@@ -64,7 +64,8 @@ class ViewController: UIViewController {
             let string = date.split(separator: "-")
             
             if string[0] == year && string[1] == month {
-                monthDate.append(String(string[2]))
+                let day = (string[2] as NSString).integerValue
+                monthDate.append("\(day)")
             }
         }
         
@@ -157,9 +158,10 @@ extension ViewController: UICollectionViewDataSource {
             
             if !monthDate.isEmpty {
                 if monthDate[0] == days[indexPath.row] {
-                    cell.dataLabel.text = days[indexPath.row]
-                    cell.dataLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-                    cell.dataLabel.textColor = .yellow
+                    cell.characterImage.isHidden = false
+                    cell.countLabel.text = "3"
+                    cell.countLabel.textColor = .systemGray
+                    cell.countLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
                     
                     monthDate.removeFirst()
                 } else {
@@ -167,12 +169,18 @@ extension ViewController: UICollectionViewDataSource {
                     
                     cell.dataLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
                     cell.dataLabel.textColor = .white
+                    
+                    cell.characterImage.isHidden = true
+                    cell.countLabel.text = ""
                 }
             } else {
                 cell.dataLabel.text = days[indexPath.row]
                 
                 cell.dataLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
                 cell.dataLabel.textColor = .white
+                
+                cell.characterImage.isHidden = true
+                cell.countLabel.text = ""
             }
             
             return cell
