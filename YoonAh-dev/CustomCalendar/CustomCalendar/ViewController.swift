@@ -155,10 +155,25 @@ extension ViewController: UICollectionViewDataSource {
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier:dayCell.identifier, for: indexPath) as! dayCell
             
-            cell.dataLabel.text = days[indexPath.row]
-            
-            cell.dataLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-            cell.dataLabel.textColor = .white
+            if !monthDate.isEmpty {
+                if monthDate[0] == days[indexPath.row] {
+                    cell.dataLabel.text = days[indexPath.row]
+                    cell.dataLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+                    cell.dataLabel.textColor = .yellow
+                    
+                    monthDate.removeFirst()
+                } else {
+                    cell.dataLabel.text = days[indexPath.row]
+                    
+                    cell.dataLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+                    cell.dataLabel.textColor = .white
+                }
+            } else {
+                cell.dataLabel.text = days[indexPath.row]
+                
+                cell.dataLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+                cell.dataLabel.textColor = .white
+            }
             
             return cell
         }
