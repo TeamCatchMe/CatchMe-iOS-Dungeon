@@ -15,6 +15,7 @@
 		ED267148268D890D0081D037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED267146268D890D0081D037 /* LaunchScreen.storyboard */; };
 		ED267153268D90B80081D037 /* characterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED267151268D90B80081D037 /* characterCVC.swift */; };
 		ED267154268D90B80081D037 /* characterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED267152268D90B80081D037 /* characterCVC.xib */; };
+		ED267157268D93E20081D037 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED267156268D93E20081D037 /* PageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		ED267149268D890D0081D037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED267151268D90B80081D037 /* characterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = characterCVC.swift; sourceTree = "<group>"; };
 		ED267152268D90B80081D037 /* characterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = characterCVC.xib; sourceTree = "<group>"; };
+		ED267156268D93E20081D037 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				ED267149268D890D0081D037 /* Info.plist */,
 				ED267151268D90B80081D037 /* characterCVC.swift */,
 				ED267152268D90B80081D037 /* characterCVC.xib */,
+				ED267156268D93E20081D037 /* PageControl.swift */,
 			);
 			path = MainLottieSample;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED267157268D93E20081D037 /* PageControl.swift in Sources */,
 				ED267140268D890C0081D037 /* ViewController.swift in Sources */,
 				ED26713C268D890C0081D037 /* AppDelegate.swift in Sources */,
 				ED267153268D90B80081D037 /* characterCVC.swift in Sources */,
