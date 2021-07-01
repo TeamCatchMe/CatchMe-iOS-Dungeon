@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: CarouselLayout())
+    
+    let charcters: [String] = ["yaggung", "2D", "yaggung", "2D", "yaggung", "2D", "yaggung", "2D", "yaggung", "2D"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,7 @@ extension ViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: testCVC.identifier, for: indexPath) as? testCVC else {
             return UICollectionViewCell()
         }
+        cell.imageView.image = UIImage(named: charcters[indexPath.item])
         return cell
     }
 }

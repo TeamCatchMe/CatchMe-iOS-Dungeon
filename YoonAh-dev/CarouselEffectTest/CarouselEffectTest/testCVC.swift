@@ -10,6 +10,8 @@ import UIKit
 class testCVC: UICollectionViewCell {
     static let identifier = "testCVC"
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
