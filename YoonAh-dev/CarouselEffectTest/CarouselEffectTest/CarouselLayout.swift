@@ -8,13 +8,16 @@
 import UIKit
 
 class CarouselLayout: UICollectionViewFlowLayout {
-    public var sideItemScale: CGFloat = 2
-    public var sideItemAlpha: CGFloat = 0.5
+    public var sideItemScale: CGFloat = 0.5
+    public var sideItemAlpha: CGFloat = 1
     public var spacing: CGFloat = 10
 
     public var isPagingEnabled: Bool = false
     
     private var isSetup: Bool = false
+    
+    private let itemSizeWidth: CGFloat = 115
+    private let itemSizeHeight: CGFloat = 98
     
     override public func prepare() {
         super.prepare()
@@ -29,12 +32,12 @@ class CarouselLayout: UICollectionViewFlowLayout {
                 
         let collectionViewSize = collectionView.bounds.size
         
-        let xInset = (collectionViewSize.width - self.itemSize.width) / 2
-        let yInset = (collectionViewSize.height - self.itemSize.height) / 2
+        let xInset = (collectionViewSize.width - itemSizeWidth) / 2
+        let yInset = (collectionViewSize.height - itemSizeHeight) / 7
         
         self.sectionInset = UIEdgeInsets(top: yInset, left: xInset, bottom: yInset, right: xInset)
         
-        let itemWidth = self.itemSize.width * 2
+        let itemWidth = itemSizeWidth
         
         let scaledItemOffset =  (itemWidth - itemWidth*self.sideItemScale) / 2
         self.minimumLineSpacing = spacing - scaledItemOffset
@@ -62,7 +65,7 @@ class CarouselLayout: UICollectionViewFlowLayout {
         let contentOffset = collectionView.contentOffset.x
         let center = attributes.center.x - contentOffset
         
-        let maxDistance = self.itemSize.width + self.minimumLineSpacing
+        let maxDistance = itemSizeWidth + self.minimumLineSpacing
         let distance = min(abs(collectionCenter - center), maxDistance)
 
         let ratio = (maxDistance - distance)/maxDistance

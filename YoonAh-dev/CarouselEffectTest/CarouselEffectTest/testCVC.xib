@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,16 +15,24 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="181" height="146"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2D" translatesAutoresizingMaskIntoConstraints="NO" id="bg8-my-T4D">
+                        <rect key="frame" x="0.0" y="0.0" width="181" height="146"/>
+                    </imageView>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" systemColor="systemPurpleColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="bg8-my-T4D" secondAttribute="trailing" id="Cqu-5i-g12"/>
+                <constraint firstItem="bg8-my-T4D" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cPA-4m-Vbb"/>
+                <constraint firstAttribute="bottom" secondItem="bg8-my-T4D" secondAttribute="bottom" id="hYI-jH-UFt"/>
+                <constraint firstItem="bg8-my-T4D" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mdt-gH-dr6"/>
+            </constraints>
             <size key="customSize" width="181" height="146"/>
-            <point key="canvasLocation" x="197.82608695652175" y="172.76785714285714"/>
+            <point key="canvasLocation" x="38" y="48"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="2D" width="135" height="116"/>
     </resources>
 </document>
