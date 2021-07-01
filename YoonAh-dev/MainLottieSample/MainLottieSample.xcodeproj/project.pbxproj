@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		ED267153268D90B80081D037 /* characterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED267151268D90B80081D037 /* characterCVC.swift */; };
 		ED267154268D90B80081D037 /* characterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED267152268D90B80081D037 /* characterCVC.xib */; };
 		ED267157268D93E20081D037 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED267156268D93E20081D037 /* PageControl.swift */; };
+		ED267159268DAA5F0081D037 /* 66948-confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = ED267158268DAA5F0081D037 /* 66948-confetti.json */; };
+		ED37F080268DAC9C00A079AD /* 66818-holographic-radar.json in Resources */ = {isa = PBXBuildFile; fileRef = ED37F07F268DAC9C00A079AD /* 66818-holographic-radar.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		ED267151268D90B80081D037 /* characterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = characterCVC.swift; sourceTree = "<group>"; };
 		ED267152268D90B80081D037 /* characterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = characterCVC.xib; sourceTree = "<group>"; };
 		ED267156268D93E20081D037 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		ED267158268DAA5F0081D037 /* 66948-confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "66948-confetti.json"; sourceTree = "<group>"; };
+		ED37F07F268DAC9C00A079AD /* 66818-holographic-radar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "66818-holographic-radar.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +58,6 @@
 				B713E9C9AD1A9172027E8F7A /* Pods-MainLottieSample.debug.xcconfig */,
 				B7A0DE7E493F6FC69095FF9C /* Pods-MainLottieSample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,6 +90,8 @@
 		ED26713A268D890B0081D037 /* MainLottieSample */ = {
 			isa = PBXGroup;
 			children = (
+				ED37F07F268DAC9C00A079AD /* 66818-holographic-radar.json */,
+				ED267158268DAA5F0081D037 /* 66948-confetti.json */,
 				ED26713B268D890C0081D037 /* AppDelegate.swift */,
 				ED26713D268D890C0081D037 /* SceneDelegate.swift */,
 				ED26713F268D890C0081D037 /* ViewController.swift */,
@@ -162,6 +167,8 @@
 			files = (
 				ED267148268D890D0081D037 /* LaunchScreen.storyboard in Resources */,
 				ED267145268D890D0081D037 /* Assets.xcassets in Resources */,
+				ED267159268DAA5F0081D037 /* 66948-confetti.json in Resources */,
+				ED37F080268DAC9C00A079AD /* 66818-holographic-radar.json in Resources */,
 				ED267154268D90B80081D037 /* characterCVC.xib in Resources */,
 				ED267143268D890C0081D037 /* Main.storyboard in Resources */,
 			);
