@@ -17,10 +17,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     
+    var totals: [String] = ["24%", "25%", "32%", "11%", "8%"]
+    var weeks : [String] = ["10", "12", "18", "5", "3"]
+    var months: [String] = ["18", "14", "12", "6", "4"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPageControl()
         setupCollectionView()
+        setLabels()
+    }
+    
+    private func setLabels() {
+        changeLabelText(page: 0)
+    }
+    
+    private func changeLabelText(page: Int) {
+        totalLabel.text = totals[page]
+        weekLabel.text = weeks[page]
+        monthLabel.text = months[page]
     }
     
     private func setupPageControl() {
@@ -79,7 +94,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 extension ViewController: UICollectionViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        //// page control selected page 바꾸는 코드
         let page = round(scrollView.contentOffset.x / scrollView.frame.width)
         pageControl.selectedPage = Int(page)
+        
+        //// Label 내용 변경하는 코드
+        changeLabelText(page: Int(page))
     }
 }

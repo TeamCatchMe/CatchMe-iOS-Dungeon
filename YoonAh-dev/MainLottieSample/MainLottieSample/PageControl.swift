@@ -34,7 +34,6 @@ class PageControl: UIView {
     private let dotSize: CGFloat = 6
     private let selectedDotSize: CGFloat = 18
     private let spacing: CGFloat = 7
-    private let selectedSpacing: CGFloat = 6
     
     init() {
         super.init(frame: .zero)
