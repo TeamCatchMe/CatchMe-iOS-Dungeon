@@ -73,36 +73,21 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        switch section {
-        case 0:
-            return CharacterReportView()
-        default:
-            return UIView()
-        }
+        return CharacterReportView()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-        case 0:
-            return 197
-        default:
-            return 0
-        }
+        return 197
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            return 40
-        default:
-            return 40
-        }
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 40
+//    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         print(scrollView.contentOffset.y)
@@ -115,13 +100,14 @@ extension ViewController: UITableViewDelegate {
         
         if width - offset < 200 {
             print(self.mainHeader.characterImageView.frame)
-            UIView.animate(withDuration: 0.1) {
+            UIView.animate(withDuration: 0.2) {
                 self.mainHeader.characterImageView.transform = CGAffineTransform(scaleX: 67/135, y: 58/116).translatedBy(x: 0, y: -160)
                 self.mainHeader.backgroundView.transform = CGAffineTransform(scaleX: 100/backgroundWidth, y: 100/backgroundHeight).translatedBy(x: 0, y: 185)
             
                 // 헤더 부분 높이
                 self.mainHeader.snp.updateConstraints { (make) in
                     make.height.equalTo(200)
+                    
                 }
                 
                 // 핑크색 배경
@@ -129,16 +115,12 @@ extension ViewController: UITableViewDelegate {
                     make.width.equalTo(self.mainHeader.backgroundView.bounds.height)
                     make.height.equalTo(self.mainHeader.backgroundView.bounds.height)
                 }
-                
-//                self.mainHeader.characterImageView.snp.updateConstraints { (make) in
-//                    make.top.equalTo(89)
-//                }
-
+            
                 // 핑크색 둥글기
                 self.mainHeader.backgroundView.layer.cornerRadius = backgroundWidth / 2
                 
             }
-            
+       
         } else {
             
             UIView.animate(withDuration: 0.2) {
@@ -151,12 +133,8 @@ extension ViewController: UITableViewDelegate {
                 self.mainHeader.snp.updateConstraints { (make) in
                     make.height.equalTo(width-offset)
                 }
-                
-//                // 핑크색 배경
-//                self.mainHeader.backgroundView.snp.updateConstraints { (make) in
-//                    make.width.height.equalTo(width-offset)
-//                }
-
+ 
+                // 캐릭터 상단 constraint
                 self.mainHeader.characterImageView.snp.updateConstraints { (make) in
                     make.top.equalTo(172)
                 }
@@ -171,7 +149,6 @@ extension ViewController: UITableViewDelegate {
 }
 
 
-
 // MARK: - UITableViewDataSource
 
 extension ViewController: UITableViewDataSource {
@@ -179,28 +156,17 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        switch section {
-        case 0:
-            return 30
-        default:
-            return 0
-        }
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch indexPath.section {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityTVC", for: indexPath)
-                    as? ActivityTVC else { return UITableViewCell() }
-            cell.backgroundColor = .orange
-//            cell.selectionStyle = .none
-            return cell
-            
-        default:
-            
-            return UITableViewCell()
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityTVC", for: indexPath)
+                as? ActivityTVC else { return UITableViewCell() }
+        cell.backgroundColor = .mainBackground
+        cell.selectionStyle = .none
+        cell.setupConfigure()
+        return cell
         
     }
     

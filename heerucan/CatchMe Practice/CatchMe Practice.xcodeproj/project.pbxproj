@@ -133,7 +133,6 @@
 		5B084FD0268AE2E8008F40B2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5B085008268DA206008F40B2 /* CharacterReportView.swift */,
 				5B084FFB268B17AC008F40B2 /* ReportStackView.swift */,
 				5B084FF8268B13AC008F40B2 /* ReportNumLabel.swift */,
 				5B084FEC268AF9A8008F40B2 /* ReportLabel.swift */,
@@ -173,6 +172,7 @@
 		5B084FEF268AFBEF008F40B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B085008268DA206008F40B2 /* CharacterReportView.swift */,
 				5B084FF0268AFC03008F40B2 /* HeaderView.swift */,
 				5B085003268B2E0E008F40B2 /* CustomNavigationBar.swift */,
 			);
