@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3682C790F4B747B874342542 /* Pods_Multipart_Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DCA7948F2057BBF9826D4D /* Pods_Multipart_Moya.framework */; };
 		ED2BE18626DF49D70068B5CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BE18526DF49D70068B5CD /* AppDelegate.swift */; };
 		ED2BE18826DF49D70068B5CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BE18726DF49D70068B5CD /* SceneDelegate.swift */; };
 		ED2BE18A26DF49D70068B5CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BE18926DF49D70068B5CD /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B13ABE89635F0C78C67A7A29 /* Pods-Multipart-Moya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multipart-Moya.release.xcconfig"; path = "Target Support Files/Pods-Multipart-Moya/Pods-Multipart-Moya.release.xcconfig"; sourceTree = "<group>"; };
+		CA0E1C3769F3D9EC3B367989 /* Pods-Multipart-Moya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multipart-Moya.debug.xcconfig"; path = "Target Support Files/Pods-Multipart-Moya/Pods-Multipart-Moya.debug.xcconfig"; sourceTree = "<group>"; };
+		D8DCA7948F2057BBF9826D4D /* Pods_Multipart_Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multipart_Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2BE18226DF49D70068B5CD /* Multipart-Moya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multipart-Moya.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2BE18526DF49D70068B5CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED2BE18726DF49D70068B5CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3682C790F4B747B874342542 /* Pods_Multipart_Moya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		758DF5D9C645A986B6883E80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA0E1C3769F3D9EC3B367989 /* Pods-Multipart-Moya.debug.xcconfig */,
+				B13ABE89635F0C78C67A7A29 /* Pods-Multipart-Moya.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ED2BE17926DF49D70068B5CD = {
 			isa = PBXGroup;
 			children = (
 				ED2BE18426DF49D70068B5CD /* Multipart-Moya */,
 				ED2BE18326DF49D70068B5CD /* Products */,
+				758DF5D9C645A986B6883E80 /* Pods */,
+				FB1154FD40AB4A74DAF28DDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = "Multipart-Moya";
 			sourceTree = "<group>";
 		};
+		FB1154FD40AB4A74DAF28DDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8DCA7948F2057BBF9826D4D /* Pods_Multipart_Moya.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED2BE19626DF49D80068B5CD /* Build configuration list for PBXNativeTarget "Multipart-Moya" */;
 			buildPhases = (
+				6EFBE4521306EEB1708AECFC /* [CP] Check Pods Manifest.lock */,
 				ED2BE17E26DF49D70068B5CD /* Sources */,
 				ED2BE17F26DF49D70068B5CD /* Frameworks */,
 				ED2BE18026DF49D70068B5CD /* Resources */,
+				2C9828054F067B089F2FEFD9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C9828054F067B089F2FEFD9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Multipart-Moya/Pods-Multipart-Moya-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Multipart-Moya/Pods-Multipart-Moya-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Multipart-Moya/Pods-Multipart-Moya-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EFBE4521306EEB1708AECFC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Multipart-Moya-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED2BE17E26DF49D70068B5CD /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		ED2BE19726DF49D80068B5CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA0E1C3769F3D9EC3B367989 /* Pods-Multipart-Moya.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +371,7 @@
 		};
 		ED2BE19826DF49D80068B5CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B13ABE89635F0C78C67A7A29 /* Pods-Multipart-Moya.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
