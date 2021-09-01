@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,11 @@
 		ED2BE18D26DF49D70068B5CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2BE18B26DF49D70068B5CD /* Main.storyboard */; };
 		ED2BE18F26DF49D80068B5CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2BE18E26DF49D80068B5CD /* Assets.xcassets */; };
 		ED2BE19226DF49D80068B5CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2BE19026DF49D80068B5CD /* LaunchScreen.storyboard */; };
+		ED2BE19A26DF4A840068B5CD /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BE19926DF4A840068B5CD /* NetworkLoggerPlugin.swift */; };
+		ED2BE19C26DF4AAC0068B5CD /* GeneralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BE19B26DF4AAC0068B5CD /* GeneralAPI.swift */; };
+		ED2BE19E26DF4ADA0068B5CD /* AddActionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BE19D26DF4ADA0068B5CD /* AddActionService.swift */; };
+		ED2BE1A026DF4B0F0068B5CD /* AddActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BE19F26DF4B0F0068B5CD /* AddActionModel.swift */; };
+		ED2BE1A426DF4F2B0068B5CD /* DeleteActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BE1A326DF4F2B0068B5CD /* DeleteActionRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		ED2BE18E26DF49D80068B5CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2BE19126DF49D80068B5CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2BE19326DF49D80068B5CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED2BE19926DF4A840068B5CD /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
+		ED2BE19B26DF4AAC0068B5CD /* GeneralAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAPI.swift; sourceTree = "<group>"; };
+		ED2BE19D26DF4ADA0068B5CD /* AddActionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionService.swift; sourceTree = "<group>"; };
+		ED2BE19F26DF4B0F0068B5CD /* AddActionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionModel.swift; sourceTree = "<group>"; };
+		ED2BE1A326DF4F2B0068B5CD /* DeleteActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteActionRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +58,6 @@
 				CA0E1C3769F3D9EC3B367989 /* Pods-Multipart-Moya.debug.xcconfig */,
 				B13ABE89635F0C78C67A7A29 /* Pods-Multipart-Moya.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,6 +82,8 @@
 		ED2BE18426DF49D70068B5CD /* Multipart-Moya */ = {
 			isa = PBXGroup;
 			children = (
+				ED2BE1A226DF4F160068B5CD /* Models */,
+				ED2BE1A126DF4F050068B5CD /* APIServices */,
 				ED2BE18526DF49D70068B5CD /* AppDelegate.swift */,
 				ED2BE18726DF49D70068B5CD /* SceneDelegate.swift */,
 				ED2BE18926DF49D70068B5CD /* ViewController.swift */,
@@ -82,6 +93,25 @@
 				ED2BE19326DF49D80068B5CD /* Info.plist */,
 			);
 			path = "Multipart-Moya";
+			sourceTree = "<group>";
+		};
+		ED2BE1A126DF4F050068B5CD /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				ED2BE19926DF4A840068B5CD /* NetworkLoggerPlugin.swift */,
+				ED2BE19B26DF4AAC0068B5CD /* GeneralAPI.swift */,
+				ED2BE19D26DF4ADA0068B5CD /* AddActionService.swift */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		ED2BE1A226DF4F160068B5CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED2BE19F26DF4B0F0068B5CD /* AddActionModel.swift */,
+				ED2BE1A326DF4F2B0068B5CD /* DeleteActionRequest.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FB1154FD40AB4A74DAF28DDD /* Frameworks */ = {
@@ -206,9 +236,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2BE1A026DF4B0F0068B5CD /* AddActionModel.swift in Sources */,
 				ED2BE18A26DF49D70068B5CD /* ViewController.swift in Sources */,
+				ED2BE19A26DF4A840068B5CD /* NetworkLoggerPlugin.swift in Sources */,
+				ED2BE19C26DF4AAC0068B5CD /* GeneralAPI.swift in Sources */,
 				ED2BE18626DF49D70068B5CD /* AppDelegate.swift in Sources */,
 				ED2BE18826DF49D70068B5CD /* SceneDelegate.swift in Sources */,
+				ED2BE1A426DF4F2B0068B5CD /* DeleteActionRequest.swift in Sources */,
+				ED2BE19E26DF4ADA0068B5CD /* AddActionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
