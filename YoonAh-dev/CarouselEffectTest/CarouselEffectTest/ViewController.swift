@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: CarouselLayout())
     
-    let charcters: [String] = ["yaggung", "2D", "yaggung", "2D", "yaggung", "2D", "yaggung", "2D", "yaggung", "2D"]
+    let charcters: [String] = ["1", "2", "3", "4", "5", "6", "7"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return charcters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

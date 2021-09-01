@@ -16,6 +16,10 @@
 		ED37F0A2268DBFE300A079AD /* CarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED37F0A1268DBFE300A079AD /* CarouselLayout.swift */; };
 		ED37F0A6268DC11000A079AD /* testCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED37F0A4268DC11000A079AD /* testCVC.swift */; };
 		ED37F0A7268DC11000A079AD /* testCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED37F0A5268DC11000A079AD /* testCVC.xib */; };
+		ED8FBF7126AD9A6200DF316B /* ViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8FBF7026AD9A6200DF316B /* ViewController4.swift */; };
+		ED94F44C26AAAF0600BADB20 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94F44B26AAAF0600BADB20 /* test.swift */; };
+		ED94F44E26AAB7EC00BADB20 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94F44D26AAB7EC00BADB20 /* ViewController3.swift */; };
+		EDB431B92695C6730008BFB4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB431B82695C6730008BFB4 /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		ED37F0A1268DBFE300A079AD /* CarouselLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayout.swift; sourceTree = "<group>"; };
 		ED37F0A4268DC11000A079AD /* testCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCVC.swift; sourceTree = "<group>"; };
 		ED37F0A5268DC11000A079AD /* testCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testCVC.xib; sourceTree = "<group>"; };
+		ED8FBF7026AD9A6200DF316B /* ViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
+		ED94F44B26AAAF0600BADB20 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		ED94F44D26AAB7EC00BADB20 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
+		EDB431B82695C6730008BFB4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		ED37F08C268DBF6000A079AD /* CarouselEffectTest */ = {
 			isa = PBXGroup;
 			children = (
+				EDB431B82695C6730008BFB4 /* ViewController2.swift */,
 				ED37F08D268DBF6000A079AD /* AppDelegate.swift */,
 				ED37F08F268DBF6000A079AD /* SceneDelegate.swift */,
 				ED37F091268DBF6000A079AD /* ViewController.swift */,
@@ -72,6 +81,9 @@
 				ED37F0A1268DBFE300A079AD /* CarouselLayout.swift */,
 				ED37F0A4268DC11000A079AD /* testCVC.swift */,
 				ED37F0A5268DC11000A079AD /* testCVC.xib */,
+				ED94F44B26AAAF0600BADB20 /* test.swift */,
+				ED94F44D26AAB7EC00BADB20 /* ViewController3.swift */,
+				ED8FBF7026AD9A6200DF316B /* ViewController4.swift */,
 			);
 			path = CarouselEffectTest;
 			sourceTree = "<group>";
@@ -149,9 +161,13 @@
 			files = (
 				ED37F092268DBF6000A079AD /* ViewController.swift in Sources */,
 				ED37F0A6268DC11000A079AD /* testCVC.swift in Sources */,
+				ED94F44E26AAB7EC00BADB20 /* ViewController3.swift in Sources */,
 				ED37F08E268DBF6000A079AD /* AppDelegate.swift in Sources */,
+				ED8FBF7126AD9A6200DF316B /* ViewController4.swift in Sources */,
 				ED37F090268DBF6000A079AD /* SceneDelegate.swift in Sources */,
 				ED37F0A2268DBFE300A079AD /* CarouselLayout.swift in Sources */,
+				EDB431B92695C6730008BFB4 /* ViewController2.swift in Sources */,
+				ED94F44C26AAAF0600BADB20 /* test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
