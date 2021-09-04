@@ -68,7 +68,7 @@ extension AddActionService: TargetType {
             ]
             
             for (key, value) in parameters {
-                formData.append(Moya.MultipartFormData(provider: .data(value as! Data), name: key))
+                formData.append(Moya.MultipartFormData(provider: .data("\(value)".data(using: .utf8)!), name: key))
             }
             
             return .uploadMultipart(formData)
@@ -97,7 +97,7 @@ extension AddActionService: TargetType {
             ]
             
             for (key, value) in parameters {
-                formData.append(Moya.MultipartFormData(provider: .data(value as! Data), name: key))
+                formData.append(Moya.MultipartFormData(provider: .data("\(value)".data(using: .utf8)!), name: key))
             }
             
             return .uploadMultipart(formData)
@@ -109,8 +109,7 @@ extension AddActionService: TargetType {
     var headers: [String: String]? {
         let accessToken = GeneralAPI.token
         switch self {
-        case .create,
-             .edit:
+        case .delete:
             return ["Content-Type": "application/json",
                     "token": accessToken] // GeneralAPI.token
         default:
