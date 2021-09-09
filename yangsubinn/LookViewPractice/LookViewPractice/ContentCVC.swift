@@ -115,18 +115,17 @@ class ContentCVC: UICollectionViewCell {
         likeButton.snp.makeConstraints { make in
             make.top.equalTo(contentImage.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(18)
-            make.bottom.equalToSuperview().offset(17)
+            make.bottom.equalToSuperview().inset(17)
         }
         
         likeCountLabel.snp.makeConstraints { make in
             make.top.equalTo(contentImage.snp.bottom).offset(16)
             make.leading.equalTo(likeButton.snp.trailing).offset(2)
-            make.bottom.equalToSuperview().offset(18)
+            make.bottom.equalToSuperview().inset(18)
         }
     }
     
     func noImageSetupLayout() {
-        
         addSubview(charBackground)
         addSubview(charImage)
         addSubview(nameLabel)
@@ -171,11 +170,13 @@ class ContentCVC: UICollectionViewCell {
         likeButton.snp.makeConstraints { make in
             make.top.equalTo(contentLabel.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(18)
+            make.bottom.equalToSuperview().inset(17)
         }
         
         likeCountLabel.snp.makeConstraints { make in
             make.top.equalTo(contentLabel.snp.bottom).offset(16)
             make.leading.equalTo(likeButton.snp.trailing).offset(2)
+            make.bottom.equalToSuperview().inset(18)
         }
     }
 }

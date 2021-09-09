@@ -11,6 +11,9 @@ class ViewController: UIViewController {
     
     let categories = ["News", "Popular", "Popular"]
     let contentImages = [nil, ".purple", ".yellow", nil, nil]
+    
+//    var contentCVC = ContentCVC()
+//    lazy var height = CGFloat()
 
     lazy var categoriesCollectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -33,11 +36,30 @@ class ViewController: UIViewController {
     lazy var contentCollectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 100, right: 20)
-        
-        let estimateHeight: CGFloat = 390
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: estimateHeight)
-        
         layout.minimumInteritemSpacing = 26
+        
+//        contentCVC.contentView.setNeedsLayout()
+//        contentCVC.contentView.layoutIfNeeded()
+//
+//        var height = contentCVC.contentView.systemLayoutSizeFitting(CGSize(width: UIScreen.main.bounds.width - 40, height: UIView.layoutFittingCompressedSize.height)).height
+//
+//        print("height: \(height)")
+//
+//        contentCVC.prepareForReuse()
+        
+        let width = UIScreen.main.bounds.width - 40
+        
+        var estimateHeight: CGFloat = 400
+        
+        
+        let dummyCell = ContentCVC(frame: CGRect(x: 0, y: 0, width: width, height: estimateHeight))
+        dummyCell.layoutIfNeeded()
+        let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimateHeight))
+        layout.itemSize = CGSize(width: width, height: estimatedSize.height)
+        print("estimatedSize.height: \(estimatedSize.height)")
+
+//        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: estimateHeight)
+        
        
         let colletionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         colletionView.register(ContentCVC.self, forCellWithReuseIdentifier: "ContentCVC")
@@ -106,10 +128,17 @@ extension ViewController: UICollectionViewDataSource {
         case contentCollectionView:
             guard let contentCell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCVC.identifier, for: indexPath) as? ContentCVC else { return UICollectionViewCell() }
             
+//            print("height: \(height)")
+            
             contentCell.backgroundColor = .brown
             contentCell.layer.cornerRadius = 20
             
-            print("contentImages[\(indexPath.item)]: \(contentImages[indexPath.item])")
+//            contentCell.contentView.setNeedsLayout()
+//            contentCell.contentView.layoutIfNeeded()
+//
+//            contentCell.prepareForReuse()
+            
+//            print("contentImages[\(indexPath.item)]: \(contentImages[indexPath.item])")
             print("-----------------")
             
             if contentImages[indexPath.item] == nil {
@@ -121,12 +150,10 @@ extension ViewController: UICollectionViewDataSource {
                 contentCell.charNameLabel.text = "이미지O"
             }
             
-//            let width = UIScreen.main.bounds.width
-//            let estimateHeight: CGFloat = 390
+//            height = contentCell.contentView.systemLayoutSizeFitting(CGSize(width: UIScreen.main.bounds.width - 40, height: UIView.layoutFittingCompressedSize.height)).height
 //
-//            contentCell.systemLayoutSizeFitting(CGSize(width: width, height: estimateHeight))
+//            contentCell.systemLayoutSizeFitting(CGSize(width: UIScreen.main.bounds.width - 40, height: height))
             
-//            layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: estimateHeight)
             
             return contentCell
             
@@ -158,5 +185,21 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        contentCVC.contentView.setNeedsLayout()
+//        contentCVC.contentView.setNeedsLayout()
+//        contentCVC.contentView.layoutIfNeeded()
+//
+//        var height = contentCVC.contentView.systemLayoutSizeFitting(CGSize(width: UIScreen.main.bounds.width - 40, height: UIView.layoutFittingCompressedSize.height)).height
+//
+//        contentCVC.prepareForReuse()
+//
+//        return CGSize(width: UIScreen.main.bounds.width - 40, height: height)
+//    }
 }
 
