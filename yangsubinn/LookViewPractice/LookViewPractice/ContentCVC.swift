@@ -36,21 +36,31 @@ class ContentCVC: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        if hasContentImage == false {
-            noImageSetupLayout()
-        } else {
-            imageSetupLayout()
-        }
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+////        if hasContentImage == false {
+////            noImageSetupLayout()
+////        } else {
+////            imageSetupLayout()
+////        }
+//    }
+    
+//    static func fittingSize(availableHeight: CGFloat, contentImage: String?) -> CGSize {
+//        let cell = ContentCVC()
+////        cell.configure(name: name)
+//        cell.layoutSubviews()
+//        
+//        let targetSize = CGSize(width: UIView.layoutFittingCompressedSize.width, height: availableHeight)
+//        return cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .fittingSizeLevel, verticalFittingPriority: .required)
+//    }
     
     func configUI() {
         charBackground.backgroundColor = .black
-        charBackground.layer.cornerRadius = 50
+        charBackground.layer.cornerRadius = 20
         
         charImage.backgroundColor = .systemPink
-        charImage.layer.cornerRadius = 20
+        charImage.layer.cornerRadius = 50
         
         nameLabel.text = "냠냐리냠ㅁ"
         timeLabel.text = "5분 전"
@@ -97,6 +107,7 @@ class ContentCVC: UICollectionViewCell {
         charNameLabel.snp.makeConstraints { make in
             make.top.equalTo(charBackground.snp.bottom).offset(21)
             make.leading.trailing.equalToSuperview().offset(18)
+//            make.height.equalTo(36)
         }
         
         contentLabel.snp.makeConstraints { make in

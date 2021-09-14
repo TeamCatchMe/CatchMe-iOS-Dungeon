@@ -11,9 +11,7 @@ class ViewController: UIViewController {
     
     let categories = ["News", "Popular", "Popular"]
     let contentImages = [nil, ".purple", ".yellow", nil, nil]
-    
-//    var contentCVC = ContentCVC()
-//    lazy var height = CGFloat()
+//    let contentImages = [".red", nil, nil, nil, ".yellow"]
 
     lazy var categoriesCollectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -35,8 +33,9 @@ class ViewController: UIViewController {
     
     lazy var contentCollectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 100, right: 20)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 50, right: 20)
         layout.minimumInteritemSpacing = 26
+//        layout.scrollDirection = .vertical
         
 //        contentCVC.contentView.setNeedsLayout()
 //        contentCVC.contentView.layoutIfNeeded()
@@ -47,25 +46,28 @@ class ViewController: UIViewController {
 //
 //        contentCVC.prepareForReuse()
         
-        let width = UIScreen.main.bounds.width - 40
+//        let width = UIScreen.main.bounds.width - 40
+//
+//        var estimateHeight: CGFloat = 400
         
-        var estimateHeight: CGFloat = 400
-        
-        
-        let dummyCell = ContentCVC(frame: CGRect(x: 0, y: 0, width: width, height: estimateHeight))
-        dummyCell.layoutIfNeeded()
-        let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimateHeight))
-        layout.itemSize = CGSize(width: width, height: estimatedSize.height)
-        print("estimatedSize.height: \(estimatedSize.height)")
+//        let dummyCell = ContentCVC(frame: CGRect(x: 0, y: 0, width: width, height: estimateHeight))
+//        dummyCell.layoutIfNeeded()
+//        let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimateHeight))
+//        layout.itemSize = CGSize(width: width, height: estimatedSize.height)
+//        print("estimatedSize.height: \(estimatedSize.height)")
+//        print("estimateHeight: \(estimateHeight)")
 
-//        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: estimateHeight)
-        
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        layout.estimatedItemSize.height
+        // UIScreen.main.bounds.width - 40
+
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: layout.estimatedItemSize.height)
        
         let colletionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         colletionView.register(ContentCVC.self, forCellWithReuseIdentifier: "ContentCVC")
         colletionView.backgroundColor = .clear
         colletionView.isScrollEnabled = true
-        colletionView.showsVerticalScrollIndicator = true
+        colletionView.showsVerticalScrollIndicator = false
         
         colletionView.dataSource = self
         colletionView.delegate = self
@@ -89,7 +91,8 @@ class ViewController: UIViewController {
         contentCollectionView.snp.makeConstraints { make in
             make.top.equalTo(categoriesCollectionView.snp.bottom).offset(2)
             make.leading.trailing.equalToSuperview()
-            make.height.equalToSuperview()
+            make.bottom.equalToSuperview()
+//            make.height.equalToSuperview()
         }
     }
 
@@ -139,14 +142,16 @@ extension ViewController: UICollectionViewDataSource {
 //            contentCell.prepareForReuse()
             
 //            print("contentImages[\(indexPath.item)]: \(contentImages[indexPath.item])")
-            print("-----------------")
+//            print("-----------------")
             
             if contentImages[indexPath.item] == nil {
-                contentCell.hasContentImage = false
+//                contentCell.hasContentImage = false
+                contentCell.noImageSetupLayout()
                 contentCell.charNameLabel.text = "이미지X"
             } else {
-                contentCell.hasContentImage = true
-                contentCell.contentImage.backgroundColor = .white
+//                contentCell.hasContentImage = true
+                contentCell.imageSetupLayout()
+                contentCell.contentImage.backgroundColor = .black /// UIColor(named: "\(contentImages[indexPath.item])")
                 contentCell.charNameLabel.text = "이미지O"
             }
             
@@ -162,17 +167,6 @@ extension ViewController: UICollectionViewDataSource {
         }
     }
     
-//    func collectionview(_ collectionView: UICollectionView, sizeForItemAt indexPath: IndexPath) -> CGSize {
-////        if collectionView == contentCollectionView {
-//////            guard let contentCell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCVC.identifier, for: indexPath) as? ContentCVC else { return UICollectionViewCell() }
-////
-////            let width = UIScreen.main.bounds.width - 40
-////            let estimateHeight: CGFloat = 390
-////
-////            return CGSize(width: width, height: estimateHeight)
-////        } else { return CGSize() }
-//    }
-    
     /// didSelectItemAt이랑 didDeselectedItemAt으로 하려다가 맨 처음에 기본으로 News가 설정되어있는 상태를 하려니까 막혀서,, categoriesCVC에 isSelected를 override해서 했슴다
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -187,19 +181,55 @@ extension ViewController: UICollectionViewDelegate {
     
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+//extension ViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return ContentCVC.fittingSize(availableHeight: 400, contentImage: contentImages[indexPath.item])
+//    }
+//}
+    
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+//        switch collectionView {
+//        case contentCollectionView:
+//            let contentCell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCVC.identifier, for: indexPath) as? ContentCVC
+//            contentCell?.contentView.setNeedsLayout()
+//            contentCell?.contentView.layoutIfNeeded()
 //
-//        contentCVC.contentView.setNeedsLayout()
-//        contentCVC.contentView.setNeedsLayout()
-//        contentCVC.contentView.layoutIfNeeded()
+//            var height = contentCell?.contentView.systemLayoutSizeFitting(CGSize(width: UIScreen.main.bounds.width - 40, height: UIView.layoutFittingCompressedSize.height)).height ?? 300
 //
-//        var height = contentCVC.contentView.systemLayoutSizeFitting(CGSize(width: UIScreen.main.bounds.width - 40, height: UIView.layoutFittingCompressedSize.height)).height
+//            contentCell?.prepareForReuse()
 //
-//        contentCVC.prepareForReuse()
+//            return CGSize(width: UIScreen.main.bounds.width - 40, height: height)
 //
-//        return CGSize(width: UIScreen.main.bounds.width - 40, height: height)
+//        case categoriesCollectionView:
+//
+//            let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+//            layout.sectionInset = UIEdgeInsets(top: 4, left: 29, bottom: 4, right: 29)
+//            layout.minimumInteritemSpacing = 1
+//            return CGSize(width: (UIScreen.main.bounds.width - 29*2) / 3 - 3, height: 29)
+//
+//        default:
+//            return
+//        }
 //    }
-}
+    
+//    func collectionView(
+//            _ collectionView: UICollectionView,
+//            layout collectionViewLayout: UICollectionViewLayout,
+//            sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//            let width = view.frame.width * 0.9
+//            let estimatedHeight: CGFloat = 300.0
+//            let dummyCell = IssueCell(
+//                frame: CGRect(x: 0, y: 0, width: width, height: estimatedHeight))
+//            dataSource.referIssue(at: indexPath) { (issue) in
+//                dummyCell.configureCell(with: issue)
+//            }
+//            dummyCell.layoutIfNeeded()
+//            let estimatedSize = dummyCell.systemLayoutSizeFitting(
+//                CGSize(width: width, height: estimatedHeight))
+//            return CGSize(width: width, height: estimatedSize.height)
+//        }
+//}
 
