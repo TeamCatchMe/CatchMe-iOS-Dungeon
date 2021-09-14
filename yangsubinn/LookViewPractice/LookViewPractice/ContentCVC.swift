@@ -67,6 +67,8 @@ class ContentCVC: UICollectionViewCell {
         
         charNameLabel.text = "뭘봐요불만있어여?"
         contentLabel.text = "오늘 떡볶이를 먹었는데 정말 맛있었다. 떡볶이는 세상에서 제일 맛있는 음식이다. 인정."
+        contentLabel.lineBreakMode = .byWordWrapping
+        contentLabel.numberOfLines = 2
         /// contentImage
         
         likeButton.backgroundColor = .gray
@@ -106,14 +108,15 @@ class ContentCVC: UICollectionViewCell {
         
         charNameLabel.snp.makeConstraints { make in
             make.top.equalTo(charBackground.snp.bottom).offset(21)
-            make.leading.trailing.equalToSuperview().offset(18)
+            make.leading.trailing.equalToSuperview().inset(18)
 //            make.height.equalTo(36)
         }
         
         contentLabel.snp.makeConstraints { make in
             make.top.equalTo(charNameLabel.snp.bottom).offset(10)
             make.leading.trailing.equalToSuperview().inset(18)
-            make.height.equalTo(36)
+//            make.width.equalTo(300)
+            make.height.equalTo(50)
         }
         
         // image
@@ -175,7 +178,8 @@ class ContentCVC: UICollectionViewCell {
         contentLabel.snp.makeConstraints { make in
             make.top.equalTo(charNameLabel.snp.bottom).offset(10)
             make.leading.trailing.equalToSuperview().inset(18)
-            make.height.equalTo(36)
+//            make.height.equalTo(36)
+            make.height.equalTo(50)
         }
         
         likeButton.snp.makeConstraints { make in
