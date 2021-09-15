@@ -1,0 +1,20 @@
+PODS:
+  - ReadMoreTextView (3.0.1)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - ReadMoreTextView
+  - SnapKit (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - ReadMoreTextView
+    - SnapKit
+
+SPEC CHECKSUMS:
+  ReadMoreTextView: 19147adf93abce6d7271e14031a00303fe28720d
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: beb18bc53f64939ea49c0670fae297a5f2628b49
+
+COCOAPODS: 1.10.1
