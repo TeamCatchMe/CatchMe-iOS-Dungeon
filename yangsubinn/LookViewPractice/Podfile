@@ -7,7 +7,7 @@ target 'LookViewPractice' do
 
   # Pods for LookViewPractice
   pod 'SnapKit', '~> 5.0.0'
-
+  pod 'ReadMoreTextView'
   target 'LookViewPracticeTests' do
     inherit! :search_paths
     # Pods for testing

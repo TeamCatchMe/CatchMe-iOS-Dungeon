@@ -6,7 +6,9 @@
 //
 
 import UIKit
+
 import SnapKit
+import ReadMoreTextView
 
 class ContentCVC: UICollectionViewCell {
     static let identifier = "ContentCVC"
@@ -16,7 +18,7 @@ class ContentCVC: UICollectionViewCell {
     let nameLabel = UILabel()
     let timeLabel = UILabel()
     let charNameLabel = UILabel()
-    let contentLabel = UILabel()
+    let contentLabel = ReadMoreTextView() /// UILabel
     let likeButton = UIButton()
     let likeCountLabel = UILabel()
     let contentImage = UIImageView()
@@ -66,13 +68,27 @@ class ContentCVC: UICollectionViewCell {
         timeLabel.text = "5분 전"
         
         charNameLabel.text = "뭘봐요불만있어여?"
-        contentLabel.text = "오늘 떡볶이를 먹었는데 정말 맛있었다. 떡볶이는 세상에서 제일 맛있는 음식이다. 인정."
-        contentLabel.lineBreakMode = .byWordWrapping
-        contentLabel.numberOfLines = 2
+        
+        contentLabel.text = "오늘 떡볶이를 먹었는데 정말 맛있었다. 떡볶이는 세상에서 제일 맛있는 음식이다. 인정. 와아압아아"
+//        contentLabel.lineBreakMode = .byWordWrapping
+//        contentLabel.lineBreakMode = .byTruncatingTail
+//        contentLabel.numberOfLines = 2
+        contentLabel.shouldTrim = true
+        contentLabel.maximumNumberOfLines = 2
+        contentLabel.attributedReadMoreText = NSAttributedString(string: "... 더보기")
+        contentLabel.font = .systemFont(ofSize: 16)
+        contentLabel.backgroundColor = .clear
+        
         /// contentImage
         
         likeButton.backgroundColor = .gray
         likeCountLabel.text = "15"
+    }
+    
+    func labelSeeMore() {
+//        if Int(contentLabel.text?).count >= 20 {
+//
+//        }
     }
     
     func imageSetupLayout() {
@@ -114,8 +130,8 @@ class ContentCVC: UICollectionViewCell {
         
         contentLabel.snp.makeConstraints { make in
             make.top.equalTo(charNameLabel.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(18)
-//            make.width.equalTo(300)
+            make.leading.trailing.equalToSuperview().inset(14)
+            make.width.equalTo(300)
             make.height.equalTo(50)
         }
         
@@ -177,8 +193,8 @@ class ContentCVC: UICollectionViewCell {
         
         contentLabel.snp.makeConstraints { make in
             make.top.equalTo(charNameLabel.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(18)
-//            make.height.equalTo(36)
+            make.leading.trailing.equalToSuperview().inset(14) /// 난 leading이랑 trailing을 잡아주면 될거라고 생각했는데
+            make.width.equalTo(300) /// width를 잡아야 linebreakMode랑 numberoflines가 적용되는걸까?....
             make.height.equalTo(50)
         }
         
