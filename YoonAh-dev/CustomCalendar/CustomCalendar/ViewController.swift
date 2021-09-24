@@ -81,6 +81,7 @@ class ViewController: UIViewController {
 extension ViewController {
     private func initView() {
         initUI()
+        initGesture()
         initCollectionView()
         self.calculation()
     }
@@ -92,6 +93,16 @@ extension ViewController {
         monthLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         
         dateFormatter.dateFormat = "M월 YYYY"
+    }
+    
+    private func initGesture() {
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(swipeRight)
     }
     
     private func initCollectionView() {
@@ -130,6 +141,25 @@ extension ViewController {
                 self.days.append("")
             } else {
                 self.days.append(String(day))
+            }
+        }
+    }
+    
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer{
+            switch swipeGesture.direction {
+                case UISwipeGestureRecognizer.Direction.left :
+                    components.month = components.month! + 1
+                    self.calculation()
+                    self.makeMonthDate()
+                    self.dateCollectionView.reloadData()
+                case UISwipeGestureRecognizer.Direction.right :
+                    components.month = components.month! - 1
+                    self.calculation()
+                    self.makeMonthDate()
+                    self.dateCollectionView.reloadData()
+                default:
+                    break
             }
         }
     }

@@ -7,31 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDF1AD3C268CE4C100606006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1AD3B268CE4C100606006 /* AppDelegate.swift */; };
-		EDF1AD3E268CE4C100606006 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1AD3D268CE4C100606006 /* SceneDelegate.swift */; };
-		EDF1AD40268CE4C100606006 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1AD3F268CE4C100606006 /* ViewController.swift */; };
-		EDF1AD43268CE4C100606006 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF1AD41268CE4C100606006 /* Main.storyboard */; };
-		EDF1AD45268CE4C400606006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF1AD44268CE4C400606006 /* Assets.xcassets */; };
-		EDF1AD48268CE4C400606006 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF1AD46268CE4C400606006 /* LaunchScreen.storyboard */; };
-		EDF1AD50268CE67D00606006 /* dayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1AD4F268CE67D00606006 /* dayCell.swift */; };
-		EDF1AD52268D027F00606006 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1AD51268D027F00606006 /* PopUpViewController.swift */; };
+		ED548F7D26EAF7C70046F7F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548F7C26EAF7C70046F7F1 /* AppDelegate.swift */; };
+		ED548F7F26EAF7C70046F7F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548F7E26EAF7C70046F7F1 /* SceneDelegate.swift */; };
+		ED548F8126EAF7C70046F7F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548F8026EAF7C70046F7F1 /* ViewController.swift */; };
+		ED548F8426EAF7C70046F7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED548F8226EAF7C70046F7F1 /* Main.storyboard */; };
+		ED548F8626EAF7C80046F7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED548F8526EAF7C80046F7F1 /* Assets.xcassets */; };
+		ED548F8926EAF7C80046F7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED548F8726EAF7C80046F7F1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EDF1AD38268CE4C100606006 /* CustomCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDF1AD3B268CE4C100606006 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDF1AD3D268CE4C100606006 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDF1AD3F268CE4C100606006 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EDF1AD42268CE4C100606006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EDF1AD44268CE4C400606006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EDF1AD47268CE4C400606006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EDF1AD49268CE4C400606006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDF1AD4F268CE67D00606006 /* dayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayCell.swift; sourceTree = "<group>"; };
-		EDF1AD51268D027F00606006 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		ED548F7926EAF7C70046F7F1 /* SocialLogin-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SocialLogin-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED548F7C26EAF7C70046F7F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED548F7E26EAF7C70046F7F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ED548F8026EAF7C70046F7F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED548F8326EAF7C70046F7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED548F8526EAF7C80046F7F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED548F8826EAF7C80046F7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED548F8A26EAF7C80046F7F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EDF1AD35268CE4C100606006 /* Frameworks */ = {
+		ED548F7626EAF7C70046F7F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,73 +37,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EDF1AD2F268CE4C100606006 = {
+		ED548F7026EAF7C70046F7F1 = {
 			isa = PBXGroup;
 			children = (
-				EDF1AD3A268CE4C100606006 /* CustomCalendar */,
-				EDF1AD39268CE4C100606006 /* Products */,
+				ED548F7B26EAF7C70046F7F1 /* SocialLogin-Example */,
+				ED548F7A26EAF7C70046F7F1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		EDF1AD39268CE4C100606006 /* Products */ = {
+		ED548F7A26EAF7C70046F7F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDF1AD38268CE4C100606006 /* CustomCalendar.app */,
+				ED548F7926EAF7C70046F7F1 /* SocialLogin-Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EDF1AD3A268CE4C100606006 /* CustomCalendar */ = {
+		ED548F7B26EAF7C70046F7F1 /* SocialLogin-Example */ = {
 			isa = PBXGroup;
 			children = (
-				EDF1AD3B268CE4C100606006 /* AppDelegate.swift */,
-				EDF1AD3D268CE4C100606006 /* SceneDelegate.swift */,
-				EDF1AD3F268CE4C100606006 /* ViewController.swift */,
-				EDF1AD41268CE4C100606006 /* Main.storyboard */,
-				EDF1AD44268CE4C400606006 /* Assets.xcassets */,
-				EDF1AD46268CE4C400606006 /* LaunchScreen.storyboard */,
-				EDF1AD49268CE4C400606006 /* Info.plist */,
-				EDF1AD4F268CE67D00606006 /* dayCell.swift */,
-				EDF1AD51268D027F00606006 /* PopUpViewController.swift */,
+				ED548F7C26EAF7C70046F7F1 /* AppDelegate.swift */,
+				ED548F7E26EAF7C70046F7F1 /* SceneDelegate.swift */,
+				ED548F8026EAF7C70046F7F1 /* ViewController.swift */,
+				ED548F8226EAF7C70046F7F1 /* Main.storyboard */,
+				ED548F8526EAF7C80046F7F1 /* Assets.xcassets */,
+				ED548F8726EAF7C80046F7F1 /* LaunchScreen.storyboard */,
+				ED548F8A26EAF7C80046F7F1 /* Info.plist */,
 			);
-			path = CustomCalendar;
+			path = "SocialLogin-Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EDF1AD37268CE4C100606006 /* CustomCalendar */ = {
+		ED548F7826EAF7C70046F7F1 /* SocialLogin-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDF1AD4C268CE4C400606006 /* Build configuration list for PBXNativeTarget "CustomCalendar" */;
+			buildConfigurationList = ED548F8D26EAF7C80046F7F1 /* Build configuration list for PBXNativeTarget "SocialLogin-Example" */;
 			buildPhases = (
-				EDF1AD34268CE4C100606006 /* Sources */,
-				EDF1AD35268CE4C100606006 /* Frameworks */,
-				EDF1AD36268CE4C100606006 /* Resources */,
+				ED548F7526EAF7C70046F7F1 /* Sources */,
+				ED548F7626EAF7C70046F7F1 /* Frameworks */,
+				ED548F7726EAF7C70046F7F1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CustomCalendar;
-			productName = CustomCalendar;
-			productReference = EDF1AD38268CE4C100606006 /* CustomCalendar.app */;
+			name = "SocialLogin-Example";
+			productName = "SocialLogin-Example";
+			productReference = ED548F7926EAF7C70046F7F1 /* SocialLogin-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EDF1AD30268CE4C100606006 /* Project object */ = {
+		ED548F7126EAF7C70046F7F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					EDF1AD37268CE4C100606006 = {
+					ED548F7826EAF7C70046F7F1 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
 			};
-			buildConfigurationList = EDF1AD33268CE4C100606006 /* Build configuration list for PBXProject "CustomCalendar" */;
+			buildConfigurationList = ED548F7426EAF7C70046F7F1 /* Build configuration list for PBXProject "SocialLogin-Example" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,57 +109,55 @@
 				en,
 				Base,
 			);
-			mainGroup = EDF1AD2F268CE4C100606006;
-			productRefGroup = EDF1AD39268CE4C100606006 /* Products */;
+			mainGroup = ED548F7026EAF7C70046F7F1;
+			productRefGroup = ED548F7A26EAF7C70046F7F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EDF1AD37268CE4C100606006 /* CustomCalendar */,
+				ED548F7826EAF7C70046F7F1 /* SocialLogin-Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EDF1AD36268CE4C100606006 /* Resources */ = {
+		ED548F7726EAF7C70046F7F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF1AD48268CE4C400606006 /* LaunchScreen.storyboard in Resources */,
-				EDF1AD45268CE4C400606006 /* Assets.xcassets in Resources */,
-				EDF1AD43268CE4C100606006 /* Main.storyboard in Resources */,
+				ED548F8926EAF7C80046F7F1 /* LaunchScreen.storyboard in Resources */,
+				ED548F8626EAF7C80046F7F1 /* Assets.xcassets in Resources */,
+				ED548F8426EAF7C70046F7F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EDF1AD34268CE4C100606006 /* Sources */ = {
+		ED548F7526EAF7C70046F7F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF1AD52268D027F00606006 /* PopUpViewController.swift in Sources */,
-				EDF1AD40268CE4C100606006 /* ViewController.swift in Sources */,
-				EDF1AD3C268CE4C100606006 /* AppDelegate.swift in Sources */,
-				EDF1AD50268CE67D00606006 /* dayCell.swift in Sources */,
-				EDF1AD3E268CE4C100606006 /* SceneDelegate.swift in Sources */,
+				ED548F8126EAF7C70046F7F1 /* ViewController.swift in Sources */,
+				ED548F7D26EAF7C70046F7F1 /* AppDelegate.swift in Sources */,
+				ED548F7F26EAF7C70046F7F1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EDF1AD41268CE4C100606006 /* Main.storyboard */ = {
+		ED548F8226EAF7C70046F7F1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EDF1AD42268CE4C100606006 /* Base */,
+				ED548F8326EAF7C70046F7F1 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		EDF1AD46268CE4C400606006 /* LaunchScreen.storyboard */ = {
+		ED548F8726EAF7C80046F7F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EDF1AD47268CE4C400606006 /* Base */,
+				ED548F8826EAF7C80046F7F1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -173,7 +165,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EDF1AD4A268CE4C400606006 /* Debug */ = {
+		ED548F8B26EAF7C80046F7F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		EDF1AD4B268CE4C400606006 /* Release */ = {
+		ED548F8C26EAF7C80046F7F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -289,38 +281,36 @@
 			};
 			name = Release;
 		};
-		EDF1AD4D268CE4C400606006 /* Debug */ = {
+		ED548F8E26EAF7C80046F7F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
-				INFOPLIST_FILE = CustomCalendar/Info.plist;
+				INFOPLIST_FILE = "SocialLogin-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tiekle.CustomCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tiekle.SocialLogin-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		EDF1AD4E268CE4C400606006 /* Release */ = {
+		ED548F8F26EAF7C80046F7F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
-				INFOPLIST_FILE = CustomCalendar/Info.plist;
+				INFOPLIST_FILE = "SocialLogin-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tiekle.CustomCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tiekle.SocialLogin-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -330,25 +320,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EDF1AD33268CE4C100606006 /* Build configuration list for PBXProject "CustomCalendar" */ = {
+		ED548F7426EAF7C70046F7F1 /* Build configuration list for PBXProject "SocialLogin-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDF1AD4A268CE4C400606006 /* Debug */,
-				EDF1AD4B268CE4C400606006 /* Release */,
+				ED548F8B26EAF7C80046F7F1 /* Debug */,
+				ED548F8C26EAF7C80046F7F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDF1AD4C268CE4C400606006 /* Build configuration list for PBXNativeTarget "CustomCalendar" */ = {
+		ED548F8D26EAF7C80046F7F1 /* Build configuration list for PBXNativeTarget "SocialLogin-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDF1AD4D268CE4C400606006 /* Debug */,
-				EDF1AD4E268CE4C400606006 /* Release */,
+				ED548F8E26EAF7C80046F7F1 /* Debug */,
+				ED548F8F26EAF7C80046F7F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EDF1AD30268CE4C100606006 /* Project object */;
+	rootObject = ED548F7126EAF7C70046F7F1 /* Project object */;
 }
