@@ -31,7 +31,7 @@ class ContentCVC: UICollectionViewCell {
         configUI()
         
         /// Snapkit 설치하기 귀찮아서 하다가 큰 코 다치는 중인 상황
-        /// 결국 snapkit을 설치한 상황
+        /// 결국 snapkit을 설치한 상황register
     }
     
     required init?(coder: NSCoder) {

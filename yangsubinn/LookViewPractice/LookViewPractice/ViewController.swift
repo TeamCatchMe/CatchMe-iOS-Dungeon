@@ -57,11 +57,16 @@ class ViewController: UIViewController {
 //        print("estimatedSize.height: \(estimatedSize.height)")
 //        print("estimateHeight: \(estimateHeight)")
 
+        print(layout.estimatedItemSize.height)
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        print("----------------------------")
+        print(layout.estimatedItemSize.height)
 //        layout.estimatedItemSize.height
         // UIScreen.main.bounds.width - 40
 
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: layout.estimatedItemSize.height)
+        print("----------------------------")
+        print(layout.estimatedItemSize.height)
        
         let colletionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         colletionView.register(ContentCVC.self, forCellWithReuseIdentifier: "ContentCVC")
