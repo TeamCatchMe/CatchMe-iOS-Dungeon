@@ -38,6 +38,19 @@ class ContentCVC: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        print("-------------prepareForReuse-------------")
+        print("hasContentImage:", hasContentImage)
+        
+        if self.hasContentImage! {
+            self.imageSetupLayout()
+        } else {
+            self.noImageSetupLayout()
+        }
+        
+    }
+    
 //    override func layoutSubviews() {
 //        super.layoutSubviews()
 //
